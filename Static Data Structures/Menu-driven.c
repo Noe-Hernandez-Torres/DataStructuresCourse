@@ -36,7 +36,7 @@ void printStackP(int a[],int top){
 int main(void){ 
 	int a[MAX], top=-1, ch,x,ok; 
 	while(1){ 
-		printf("\n1)push 2)pop 3)peek 4)size 5)print 0)exit\n> ");
+		printf("\n1)push \n2)pop \n3)peek \n4)size \n5)print \n0)exit\n> ");
 		if(scanf("%d",&ch)!=1) 
 			return 0; 
 		if(ch==0) 
@@ -47,20 +47,21 @@ int main(void){
 					if(scanf("%d",&x)!=1) 
 						return 0; 
 					ok=pushP(a,&top,x,MAX); 
-					if(!ok) printf("overflow\n"); 
-						break; 
+					if(!ok) 
+						printf("overflow\n"); 
+					break; 
 			case 2: ok=popP(a,&top,&x); 
 					if(ok)
 						printf("pop=%d\n",x); 
 					else 
 						printf("underflow\n"); 
-						break; 
+					break; 
 			case 3: ok=peekP(a,top,&x); 
 					if(ok) 
 						printf("peek=%d\n",x); 
 					else 
 						printf("empty\n"); 
-						break; 
+					break; 
 			case 4: printf("size=%d\n", sizeP(top)); 
 					break; 
 			case 5: printStackP(a,top); 
